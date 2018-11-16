@@ -7,8 +7,12 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.get('/api/books', con1.test);
-
+app.get('/api/books/toread', con1.getBooksToRead);
+app.get('/api/books/iveread', con1.getBooksIveRead);
+app.post('/api/books/toread', con1.createBookToRead);
+app.post('/api/books/iveread', con1.createBookHaveRead);
+app.delete('/api/books/toread/:id', con1.deleteBookToRead);
+app.delete('/api/books/iveread/:id', con1.deleteBookHaveRead);
 
 
 const {port} = config;
