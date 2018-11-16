@@ -21,7 +21,7 @@ module.exports={
         res.status(200).send(bookListHaveRead);
     },
     updateBookToRead: (req, res) => {
-        const bookIndex = bookListToRead.findIndex(book => book.uniqueId === +req.params.id);
+        const bookIndex = bookListToRead.findIndex(book => book.id === +req.params.id);
         let newBook = bookListToRead[bookIndex];
         bookListToRead[bookIndex] = {
             id: newBook.id,
@@ -32,7 +32,7 @@ module.exports={
         res.status(200).send(bookListToRead);
     },
     updateBookHaveRead: (req, res) => {
-        const bookIndex = bookListHaveRead.findIndex(book => book.uniqueId === +req.params.id);
+        const bookIndex = bookListHaveRead.findIndex(book => book.id === +req.params.id);
         let newBook = bookListHaveRead[bookIndex];
         bookListHaveRead[bookIndex] = {
             id: newBook.id,

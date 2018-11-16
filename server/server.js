@@ -11,6 +11,8 @@ app.get('/api/books/toread', con1.getBooksToRead);
 app.get('/api/books/iveread', con1.getBooksIveRead);
 app.post('/api/books/toread', con1.createBookToRead);
 app.post('/api/books/iveread', con1.createBookHaveRead);
+app.put('/api/books/toread/:id', con1.updateBookToRead)
+app.put('/api/books/iveread/:id', con1.updateBookHaveRead)
 app.delete('/api/books/toread/:id', con1.deleteBookToRead);
 app.delete('/api/books/iveread/:id', con1.deleteBookHaveRead);
 
