@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
 import './App.css';
 import Inputs from './components/Inputs.jsx';
 import BookList from './components/BookList.jsx';
@@ -18,6 +18,8 @@ class App extends Component {
     }
     this.updateList1 = this.updateList1.bind(this)
     this.updateList2 = this.updateList2.bind(this)
+    this.bookClick1 = this.bookClick1.bind(this)
+    this.bookClick2 = this.bookClick2.bind(this)
   }
 
   updateList1(Books) {
@@ -26,13 +28,22 @@ class App extends Component {
       id1: '',
     })
   }
-  updatelist2(Books) {
+  updateList2(Books) {
     this.setState({
       booksIveRead: Books,
       id2: '',
     })
   }
-
+  bookClick1(bookId) {
+    this.setState({
+      id1: bookId,
+    })
+  }
+  bookClick2(bookId) {
+    this.setState({
+      id2: bookId
+    })
+  }
 
   render() {
     const url1 = '/api/books/toread'
@@ -45,16 +56,16 @@ class App extends Component {
             <Inputs url={url1} update={this.updateList1} id={this.state.id1} />
           </div>
           <div className='BookListBox1'>
-            <BookList />
+            <BookList click={this.bookClick1} bookList={this.state.booksToRead} />
           </div>
         </div>
         <div className='BooksIveRead'>
           <div className='InputSection'>
             <h1>Books I've Read</h1>
-            <Inputs url={url2} update={this.updatelist2} id={this.state.id2} />
+            <Inputs url={url2} update={this.updateList2} id={this.state.id2} />
           </div>
           <div className='BookListBox2'>
-            <BookList />
+            <BookList click={this.bookClick2} bookList={this.state.booksIveRead} />
           </div>
         </div>
         <div className='ExternalApiSection' >
@@ -64,7 +75,7 @@ class App extends Component {
             <Button className='SupriseMe' />
           </div>
           <div className='BookListBox3' >
-            <BookList />
+            <BookList bookList={[]}/>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from './Button.jsx'
+import axios from 'axios'
 
 export default class Inputs extends Component {
     constructor() {
