@@ -8,9 +8,9 @@ export default class BookItem extends Component {
                 <img className='BookIcon' 
                 src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/book-512.png" 
                 alt="Book Icon"/>
-                <h4>{this.props.title}</h4>
-                <h4>{this.props.author}</h4>
-                <h4>{this.props.pages}</h4>
+                <h4>Title: {this.props.title}</h4>
+                <h4>Author: {this.props.author}</h4>
+                <h4>Pages: {this.props.pages}</h4>
             </div>
         )
     }

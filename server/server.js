@@ -7,6 +7,8 @@ const app = express();
 
 app.use(bodyParser.json());
 
+
+app.post('/api/findBooks', con1.findBooks)
 app.get('/api/books/toread', con1.getBooksToRead);
 app.get('/api/books/iveread', con1.getBooksIveRead);
 app.post('/api/books/toread', con1.createBookToRead);

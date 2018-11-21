@@ -5,6 +5,7 @@ import Inputs from './components/Inputs.jsx';
 import BookList from './components/BookList.jsx';
 import Button from './components/Button.jsx';
 import Dropdown from './components/Dropdown.jsx';
+import ExternalBookList from './components/ExternalBookList.jsx'
 
 class App extends Component {
   constructor() {
@@ -15,9 +16,11 @@ class App extends Component {
       booksIveRead: [],
       id1: '',
       id2: '',
+      findMoreBooks: [],
     }
     this.updateList1 = this.updateList1.bind(this)
     this.updateList2 = this.updateList2.bind(this)
+    this.updateList3 = this.updateList3.bind(this)
     this.bookClick1 = this.bookClick1.bind(this)
     this.bookClick2 = this.bookClick2.bind(this)
   }
@@ -32,6 +35,11 @@ class App extends Component {
     this.setState({
       booksIveRead: Books,
       id2: '',
+    })
+  }
+  updateList3(Books) {
+    this.setState({
+      findMoreBooks: Books,
     })
   }
   bookClick1(bookId) {
@@ -71,11 +79,11 @@ class App extends Component {
         <div className='ExternalApiSection' >
           <div className='Selection'>
             <h1>Find More Books</h1>
-            <Dropdown />
+            <Dropdown update={this.updateList3} />
             <Button className='SupriseMe' />
           </div>
           <div className='BookListBox3' >
-            <BookList bookList={[]}/>
+            <ExternalBookList bookList={this.state.findMoreBooks}/>
           </div>
         </div>
       </div>

@@ -1,9 +1,17 @@
+const axios = require('axios')
+const config = require('./../../config.js')
 let bookListToRead = [];
 let uniqueId = 0;
 let bookListIveRead = [];
-
+const {key} = config;
 
 module.exports={
+    findBooks: (req, res1) => {
+        let promise = axios.get(`https://www.googleapis.com/books/v1/volumes?q=+subject:${req.body.title}&key=${key}`)
+        promise.then(res => {
+            res1.status(200).send(res.data)
+        })
+    },
     getBooksToRead: (req, res) => {
         res.status(200).send(bookListToRead)
     },
