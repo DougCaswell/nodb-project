@@ -14,7 +14,7 @@ class Dropdown extends Component {
                 title: 'Fantasy',
             }, {
                 id: 1,
-                title: 'Sci-fi',
+                title: 'Science Fiction',
             }, {
                 id: 2,
                 title: 'Mystery',
@@ -49,22 +49,23 @@ class Dropdown extends Component {
 
     render() {
         return (
-            <div className="dropDownMenu">
-                <div className="dropDownHeader" onClick={() => this.toggleList()}>
-                    <div className="dropDownTitle">Genre</div>
+            <div className="DropDownMenu">
+                <div className="DropDownHeader" onClick={() => this.toggleList()}>
+                    <div className="DropDownTitle">Genre</div>
                     {this.state.listOpen
-                        ? <FontAwesome name="angle-up" size="2x" />
-                        : <FontAwesome name="angle-down" size="2x" />
+                        ? <FontAwesome name="Angle-up" size="2x" />
+                        : <FontAwesome name="Angle-down" size="2x" />
                     }
                 </div>
-                {this.state.listOpen && <ul className="dropDownList">
+                {this.state.listOpen && <ul className="DropDownList">
                     {this.state.dropDownArray.map((genre) => (
                         <li 
-                        className="dropDownItem" 
+                        className="DropDownItem" 
                         id={genre.id} 
                         key={genre.id}
                         onClick={() => {
                             this.onSelect(genre)
+                            this.toggleList()
                         }}
                          >{genre.title}</li>
                     ))}

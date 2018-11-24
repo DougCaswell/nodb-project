@@ -1,0 +1,106 @@
+.App {
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.BooksToRead {
+    width: 30vw;
+    height: 100vh;
+}
+.BooksIveRead {
+    width: 30vw;
+    height: 100vh;
+}
+.ExternalApiSection {
+    width: 40vw;
+    height: 100vh;    
+}
+.BookListBox {
+    height: 55vh;
+    border: 3px solid black;
+    padding: 2vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.BookList {
+    border: 3px solid black;
+    height: 51vh;
+    width: 40vw;
+    overflow: auto;
+    border-radius: 10px;
+}
+.Book {
+    display: flex;
+    margin: 30px;
+}
+.BookIcon {
+    height: 100px;
+    width: 80px;
+}
+.BookDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+h4 {
+    margin: 1px;
+}
+.Inputs {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    height: 30px;
+    width: 25vw;
+    border: 1px solid black;
+    margin: 1vh;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+.InputSection {
+    height: 39.5vh;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Buttons {
+    margin: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+button {
+    height: 20px;
+    width: 80px;
+    border-radius: 10px;
+}
+.DropDownMenu {
+    border: 3px solid black;
+    height: 30px;
+    width: 25vw;
+    border-radius: 10px;
+}
+.DropDownTitle {
+    text-align: center;
+    margin-top: 4px;
+}
+.DropDownList {
+    border: 1px solid black;
+    border-radius: 10px;
+    list-style-type: none;
+    width: 25vw;
+    text-align: center;
+    padding: 0;
+}
+.DropDownItem {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    height: 25px;
+}
+.selected {
+    background-color: rgb(98, 255, 247);
+    display: flex;
+    margin: 30px;
+}

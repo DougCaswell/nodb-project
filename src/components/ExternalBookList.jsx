@@ -14,6 +14,7 @@ export default class BookList extends Component {
                         pages={book.volumeInfo.pageCount} 
                         id={book.id}
                         click={() => console.log('Click')}
+                        selectedId={this.props.selectedId}
                         />
                     )
                 })}

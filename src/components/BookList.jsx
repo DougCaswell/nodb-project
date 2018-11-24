@@ -14,6 +14,7 @@ export default class BookList extends Component {
                         pages={book.pages} 
                         id={book.id}
                         click={this.props.click}
+                        selectedId={this.props.selectedId}
                         />
                     )
                 })}

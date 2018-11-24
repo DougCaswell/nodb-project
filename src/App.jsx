@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Inputs from './components/Inputs.jsx';
 import BookList from './components/BookList.jsx';
-import Button from './components/Button.jsx';
 import Dropdown from './components/Dropdown.jsx';
 import ExternalBookList from './components/ExternalBookList.jsx'
 
@@ -63,8 +62,8 @@ class App extends Component {
             <h1>Books to Read</h1>
             <Inputs url={url1} update={this.updateList1} id={this.state.id1} />
           </div>
-          <div className='BookListBox1'>
-            <BookList click={this.bookClick1} bookList={this.state.booksToRead} />
+          <div className='BookListBox'>
+            <BookList click={this.bookClick1} bookList={this.state.booksToRead} selectedId={this.state.id1}/>
           </div>
         </div>
         <div className='BooksIveRead'>
@@ -72,18 +71,17 @@ class App extends Component {
             <h1>Books I've Read</h1>
             <Inputs url={url2} update={this.updateList2} id={this.state.id2} />
           </div>
-          <div className='BookListBox2'>
-            <BookList click={this.bookClick2} bookList={this.state.booksIveRead} />
+          <div className='BookListBox'>
+            <BookList click={this.bookClick2} bookList={this.state.booksIveRead} selectedId={this.state.id2} />
           </div>
         </div>
         <div className='ExternalApiSection' >
-          <div className='Selection'>
+          <div className='InputSection'>
             <h1>Find More Books</h1>
             <Dropdown update={this.updateList3} />
-            <Button className='SupriseMe' />
           </div>
-          <div className='BookListBox3' >
-            <ExternalBookList bookList={this.state.findMoreBooks}/>
+          <div className='BookListBox' >
+            <ExternalBookList bookList={this.state.findMoreBooks} selectedId={''} />
           </div>
         </div>
       </div>
