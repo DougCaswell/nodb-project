@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    background-color: rgb(184, 238, 255);
 }
 .BookList {
     border: 3px solid black;
@@ -28,6 +29,7 @@
     width: 40vw;
     overflow: auto;
     border-radius: 10px;
+    background-color: whitesmoke;
 }
 .Book {
     display: flex;
@@ -57,6 +59,7 @@ input {
     border-radius: 10px;
     text-align: center;
     font-size: 20px;
+    background-color: whitesmoke;
 }
 .InputSection {
     height: 39.5vh;
@@ -64,6 +67,7 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(184, 238, 255);
 }
 .Buttons {
     margin: 3vh;
@@ -81,6 +85,7 @@ button {
     height: 30px;
     width: 25vw;
     border-radius: 10px;
+    background-color: whitesmoke;
 }
 .DropDownHeader {
     text-align: center;
@@ -101,6 +106,9 @@ button {
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
     height: 25px;
+}
+.DropDownItem:hover {
+    background-color: rgb(98, 255, 247);
 }
 .selected {
     background-color: rgb(98, 255, 247);
