@@ -51,12 +51,12 @@ module.exports={
         res.status(200).send(bookListIveRead);
     },
     deleteBookToRead: (req, res) => {
-        const bookIndex = bookListToRead.findIndex(book => book.uniqueId === +req.params.id);
+        const bookIndex = bookListToRead.findIndex(book => book.id === +req.params.id);
         bookListToRead.splice(bookIndex, 1);
         res.status(200).send(bookListToRead);
     },
     deleteBookIveRead: (req, res) => {
-        const bookIndex = bookListIveRead.findIndex(book => book.uniqueId === +req.params.id);
+        const bookIndex = bookListIveRead.findIndex(book => book.id === +req.params.id);
         bookListIveRead.splice(bookIndex, 1);
         res.status(200).send(bookListIveRead);
     },

@@ -35,26 +35,30 @@ export default class Inputs extends Component {
 
     componentDidMount() {
         let promise = axios.get(this.props.url)
-        promise.then(res => {this.props.update(res.data)})
-        
+        promise.then(res => { this.props.update(res.data) })
+
     }
     addBook() {
-        let newBook = {
-            title: this.state.title,
-            author: this.state.author,
-            pages: this.state.pages,
-        }
-        let promise = axios.post(this.props.url, newBook)
-        promise.then(res => {
-            this.props.update(res.data)
-            this.setState({
-                title: '',
-                author: '',
-                pages: '',
+        if (this.state.title === '') { alert("The book needs atleast a title!") }
+        else {
+            let newBook = {
+                title: this.state.title,
+                author: this.state.author,
+                pages: this.state.pages,
+            }
+            let promise = axios.post(this.props.url, newBook)
+            promise.then(res => {
+                this.props.update(res.data)
+                this.setState({
+                    title: '',
+                    author: '',
+                    pages: '',
+                })
+
             })
-        })
+        }
     }
-    
+
     updateBook() {
         if (this.props.id === '') { alert("You have to select a book first!") }
         else {
@@ -74,7 +78,7 @@ export default class Inputs extends Component {
             })
         }
     }
-    
+
     deleteBook() {
         if (this.props.id === '') { alert("You have to select a book first!") }
         else {
