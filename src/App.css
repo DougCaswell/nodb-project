@@ -1,6 +1,9 @@
+* {
+    font-family: 'Inconsolata', sans-serif;
+    font-weight: 650;
+}
 .App {
     display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .BooksToRead {
     width: 30vw;
@@ -71,14 +74,16 @@ input {
 }
 .Buttons {
     margin: 3vh;
+    margin-top: 4vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 button {
-    height: 20px;
-    width: 80px;
+    height: 40px;
+    width: 100px;
     border-radius: 10px;
+    font-size: 20px;
 }
 .DropDownMenu {
     border: 3px solid black;
@@ -101,6 +106,7 @@ button {
     width: 25vw;
     text-align: center;
     padding: 0;
+    background-color: whitesmoke;
 }
 .DropDownItem {
     border-top: 1px solid gray;
