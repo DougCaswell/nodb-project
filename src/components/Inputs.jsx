@@ -99,7 +99,7 @@ export default class Inputs extends Component {
             <div>
                 <div className='Inputs'>
                     <input type="text" placeholder='Title' onChange={(event) => this.updateTitle(event.target.value)} value={this.state.title} />
-                    <input type="text" placeholder='Author' onChange={(event) => this.updateAuthor(event.target.value)} value={this.state.author} />
+                    <input type="text" placeholder='Author(s)' onChange={(event) => this.updateAuthor(event.target.value)} value={this.state.author} />
                     <input type="text" placeholder='Pages' onChange={(event) => this.updatePages(event.target.value)} value={this.state.pages} />
                 </div>
                 <div className='Buttons'>

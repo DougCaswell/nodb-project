@@ -53,6 +53,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.findMoreBooks)
     const url1 = '/api/books/toread'
     const url2 = '/api/books/iveread'
     return (

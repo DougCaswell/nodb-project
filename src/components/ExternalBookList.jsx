@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import BookItem from './BookItem.jsx'
+import BookItem from './BookItem.jsx';
+import intersperse from 'intersperse';
 
 export default class BookList extends Component {
     render() {
@@ -10,9 +11,10 @@ export default class BookList extends Component {
                     return (
                         <BookItem 
                         title={book.volumeInfo.title} 
-                        author={book.volumeInfo.authors} 
+                        author={intersperse(book.volumeInfo.authors, ', ')} 
                         pages={book.volumeInfo.pageCount} 
                         id={book.id}
+                        key={book.id}
                         click={() => console.log('Click')}
                         selectedId={this.props.selectedId}
                         />

@@ -13,6 +13,7 @@ export default class BookList extends Component {
                         author={book.author} 
                         pages={book.pages} 
                         id={book.id}
+                        key={book.id}
                         click={this.props.click}
                         selectedId={this.props.selectedId}
                         />
