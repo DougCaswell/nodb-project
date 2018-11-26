@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import intersperse from 'intersperse';
 import './App.css';
 import Inputs from './components/Inputs.jsx';
 import BookList from './components/BookList.jsx';
@@ -70,7 +71,7 @@ class App extends Component {
       let index = this.state.findMoreBooks.findIndex(book => this.state.id3 === book.id);
       let newBook = {
         title: this.state.findMoreBooks[index].volumeInfo.title,
-        author: this.state.findMoreBooks[index].volumeInfo.authors,
+        author: intersperse(this.state.findMoreBooks[index].volumeInfo.authors, ', '),
         pages: this.state.findMoreBooks[index].volumeInfo.pageCount,
       };
       let promise = axios.post('/api/books/toread', newBook);
@@ -90,7 +91,7 @@ class App extends Component {
       let index = this.state.findMoreBooks.findIndex(book => this.state.id3 === book.id);
       let newBook = {
         title: this.state.findMoreBooks[index].volumeInfo.title,
-        author: this.state.findMoreBooks[index].volumeInfo.authors,
+        author: intersperse(this.state.findMoreBooks[index].volumeInfo.authors, ', '),
         pages: this.state.findMoreBooks[index].volumeInfo.pageCount,
       };
       let promise = axios.post('/api/books/iveread', newBook)
