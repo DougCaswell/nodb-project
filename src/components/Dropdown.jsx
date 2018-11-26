@@ -52,7 +52,7 @@ class Dropdown extends Component {
         return (
             <div className="DropDownMenu">
                 <div className="DropDownHeader" onClick={() => this.toggleList()}>
-                    <div className="DropDownTitle">Genre
+                    <div className="DropDownTitle">Choose a Genre
                         <div className="Arrow">
                             {this.state.listOpen
                                 ? <UpArrow />
