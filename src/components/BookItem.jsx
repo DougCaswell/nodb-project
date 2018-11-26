@@ -10,7 +10,7 @@ export default class BookItem extends Component {
                     alt="Book Icon" />
                 <div className='BookDetails'>
                     <h4>Title: {this.props.title}</h4>
-                    <h4>Author: {this.props.author}</h4>
+                    <h4>Author(s): {this.props.author}</h4>
                     <h4>Pages: {this.props.pages}</h4>
                 </div>
             </div>
