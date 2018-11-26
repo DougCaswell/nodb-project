@@ -74,7 +74,7 @@ input {
 }
 .Buttons {
     margin: 3vh;
-    margin-top: 4vh;
+    margin-top: 4.5vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
