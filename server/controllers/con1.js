@@ -7,7 +7,7 @@ const {key} = config;
 
 module.exports={
     findBooks: (req, res1) => {
-        let promise = axios.get(`https://www.googleapis.com/books/v1/volumes?q=+subject:${req.body.title}&key=${key}`)
+        let promise = axios.get(`https://www.googleapis.com/books/v1/volumes?q=+subject:${req.body.title}&maxResults=20&key=${key}`)
         promise.then(res => {
             res1.status(200).send(res.data)
         })
