@@ -82,9 +82,12 @@ button {
     width: 25vw;
     border-radius: 10px;
 }
-.DropDownTitle {
+.DropDownHeader {
     text-align: center;
     margin-top: 4px;
+}
+.Arrow {
+    float: right;
 }
 .DropDownList {
     border: 1px solid black;

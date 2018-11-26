@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import FontAwesome from "react-fontawesome";
 import onClickOutside from "react-onclickoutside";
+import { ReactComponent as UpArrow } from './../SVGs/baseline-keyboard_arrow_up-24px.svg'
+import { ReactComponent as DownArrow } from './../SVGs/baseline-keyboard_arrow_down-24px.svg'
 
 
 class Dropdown extends Component {
@@ -44,30 +45,33 @@ class Dropdown extends Component {
         promise.then(res => {
             this.props.update(res.data.items)
         })
-        
+
     }
 
     render() {
         return (
             <div className="DropDownMenu">
                 <div className="DropDownHeader" onClick={() => this.toggleList()}>
-                    <div className="DropDownTitle">Genre</div>
-                    {this.state.listOpen
-                        ? <FontAwesome name="Angle-up" size="2x" />
-                        : <FontAwesome name="Angle-down" size="2x" />
-                    }
+                    <div className="DropDownTitle">Genre
+                        <div className="Arrow">
+                            {this.state.listOpen
+                                ? <UpArrow />
+                                : <DownArrow />
+                            }
+                        </div>
+                    </div>
                 </div>
                 {this.state.listOpen && <ul className="DropDownList">
                     {this.state.dropDownArray.map((genre) => (
-                        <li 
-                        className="DropDownItem" 
-                        id={genre.id} 
-                        key={genre.id}
-                        onClick={() => {
-                            this.onSelect(genre)
-                            this.toggleList()
-                        }}
-                         >{genre.title}</li>
+                        <li
+                            className="DropDownItem"
+                            id={genre.id}
+                            key={genre.id}
+                            onClick={() => {
+                                this.onSelect(genre)
+                                this.toggleList()
+                            }}
+                        >{genre.title}</li>
                     ))}
                 </ul>}
             </div>
