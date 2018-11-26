@@ -38,6 +38,9 @@
     display: flex;
     margin: 30px;
 }
+.Book:hover {
+    background-color: rgb(98, 255, 247);
+}
 .BookIcon {
     height: 100px;
     width: 80px;
