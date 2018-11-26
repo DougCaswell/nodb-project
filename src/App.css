@@ -112,8 +112,6 @@ button {
     background-color: whitesmoke;
 }
 .DropDownItem {
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
     height: 25px;
 }
 .DropDownItem:hover {
@@ -123,4 +121,7 @@ button {
     background-color: rgb(98, 255, 247);
     display: flex;
     margin: 30px;
+}
+ul > li + li {
+    border-top: 1px solid gray;
 }
